@@ -1,0 +1,1305 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prof. Wanderson Schneider | Matemática & Física</title>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --blue-900: #0D2B5E;
+      --blue-800: #1565C0;
+      --blue-600: #1E88E5;
+      --blue-400: #42A5F5;
+      --blue-100: #BBDEFB;
+      --blue-50:  #E3F2FD;
+      --white:    #FFFFFF;
+      --gray-50:  #F8FAFC;
+      --gray-100: #F0F4F8;
+      --gray-300: #CBD5E1;
+      --gray-500: #64748B;
+      --gray-700: #334155;
+      --gray-900: #0F172A;
+      --green-500: #16A34A;
+      --amber-500: #D97706;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 20px;
+      --radius-xl: 28px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--gray-50);
+      color: var(--gray-900);
+      min-height: 100vh;
+    }
+
+    /* ── HEADER ── */
+    header {
+      background: var(--blue-900);
+      padding: 0 5%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -80px;
+      width: 340px; height: 340px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.04);
+      pointer-events: none;
+    }
+    header::after {
+      content: '';
+      position: absolute;
+      bottom: -100px; left: 30%;
+      width: 220px; height: 220px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.03);
+      pointer-events: none;
+    }
+
+    .header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 48px 0 52px;
+      gap: 32px;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 1;
+    }
+
+    .header-text { flex: 1; min-width: 260px; }
+
+    .header-eyebrow {
+      font-family: 'Sora', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--blue-400);
+      margin-bottom: 10px;
+    }
+
+    header h1 {
+      font-family: 'Sora', sans-serif;
+      font-size: clamp(26px, 4vw, 40px);
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1.15;
+      margin-bottom: 12px;
+    }
+
+    header h1 span {
+      color: var(--blue-400);
+    }
+
+    header p {
+      font-size: 15px;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.6;
+      max-width: 420px;
+    }
+
+    .header-badges {
+      display: flex;
+      gap: 10px;
+      margin-top: 22px;
+      flex-wrap: wrap;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 500;
+      border: 1px solid rgba(255,255,255,0.15);
+      color: rgba(255,255,255,0.8);
+      background: rgba(255,255,255,0.07);
+    }
+
+    .badge-icon { font-size: 14px; }
+
+    .header-decoration {
+      flex-shrink: 0;
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .math-symbol {
+      font-family: 'Sora', sans-serif;
+      font-weight: 800;
+      line-height: 1;
+      color: rgba(255,255,255,0.07);
+      user-select: none;
+      pointer-events: none;
+    }
+
+    .ms-big   { font-size: 110px; }
+    .ms-small { font-size: 64px; color: rgba(255,255,255,0.05); }
+
+    /* ── STATS BAR ── */
+    .stats-bar {
+      background: var(--blue-800);
+      padding: 0 5%;
+    }
+
+    .stats-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      gap: 0;
+    }
+
+    .stat-item {
+      padding: 16px 32px 16px 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .stat-item + .stat-item {
+      padding-left: 32px;
+      border-left: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .stat-num {
+      font-family: 'Sora', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--white);
+    }
+
+    .stat-label {
+      font-size: 12px;
+      color: rgba(255,255,255,0.6);
+    }
+
+    /* ── MAIN ── */
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 52px 5% 80px;
+    }
+
+    .section-title {
+      font-family: 'Sora', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--blue-800);
+      margin-bottom: 6px;
+    }
+
+    .section-heading {
+      font-family: 'Sora', sans-serif;
+      font-size: clamp(20px, 3vw, 26px);
+      font-weight: 700;
+      color: var(--gray-900);
+      margin-bottom: 28px;
+    }
+
+    /* ── SUBJECT FILTERS ── */
+    .filters {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 28px;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      padding: 8px 18px;
+      border-radius: 20px;
+      border: 1.5px solid var(--gray-300);
+      font-size: 13px;
+      font-weight: 500;
+      font-family: 'DM Sans', sans-serif;
+      cursor: pointer;
+      background: var(--white);
+      color: var(--gray-700);
+      transition: all 0.18s;
+    }
+
+    .filter-btn:hover {
+      border-color: var(--blue-600);
+      color: var(--blue-800);
+    }
+
+    .filter-btn.active {
+      background: var(--blue-800);
+      border-color: var(--blue-800);
+      color: var(--white);
+    }
+
+    /* ── SIMULADO GRID ── */
+    .simulado-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .simulado-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      border: 1.5px solid var(--gray-100);
+      overflow: hidden;
+      transition: transform 0.2s, border-color 0.2s;
+      display: flex;
+      flex-direction: column;
+      animation: fadeUp 0.4s both;
+    }
+
+    .simulado-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--blue-100);
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .simulado-card:nth-child(1) { animation-delay: 0.05s; }
+    .simulado-card:nth-child(2) { animation-delay: 0.10s; }
+    .simulado-card:nth-child(3) { animation-delay: 0.15s; }
+    .simulado-card:nth-child(4) { animation-delay: 0.20s; }
+    .simulado-card:nth-child(5) { animation-delay: 0.25s; }
+    .simulado-card:nth-child(6) { animation-delay: 0.30s; }
+
+    .card-stripe {
+      height: 6px;
+    }
+    .stripe-mat { background: var(--blue-800); }
+    .stripe-fis { background: #2E7D32; }
+    .stripe-mix { background: linear-gradient(90deg, var(--blue-800) 50%, #2E7D32 50%); }
+
+    .card-body {
+      padding: 20px 22px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      gap: 10px;
+    }
+
+    .card-subject {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 20px;
+    }
+
+    .subj-mat { background: var(--blue-50); color: var(--blue-800); }
+    .subj-fis { background: #F0FBF0; color: #2E7D32; }
+    .subj-mix { background: #F5F0FF; color: #5B21B6; }
+
+    .card-num {
+      font-size: 11px;
+      color: var(--gray-500);
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .card-title {
+      font-family: 'Sora', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--gray-900);
+      margin-bottom: 8px;
+      line-height: 1.35;
+    }
+
+    .card-desc {
+      font-size: 13px;
+      color: var(--gray-500);
+      line-height: 1.55;
+      flex: 1;
+      margin-bottom: 18px;
+    }
+
+    .card-meta {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+    }
+
+    .meta-item {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 12px;
+      color: var(--gray-500);
+    }
+
+    .meta-icon { font-size: 14px; }
+
+    .card-btn {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      background: var(--blue-800);
+      color: var(--white);
+      text-align: center;
+      text-decoration: none;
+      border-radius: var(--radius-sm);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      transition: background 0.18s;
+      border: none;
+      cursor: pointer;
+    }
+
+    .card-btn:hover { background: var(--blue-900); }
+    .card-btn.fis { background: #2E7D32; }
+    .card-btn.fis:hover { background: #1B5E20; }
+
+    /* ── EMPTY STATE ── */
+    .empty-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      border: 2px dashed var(--gray-300);
+      padding: 40px 24px;
+      text-align: center;
+      grid-column: 1 / -1;
+    }
+
+    .empty-icon { font-size: 40px; margin-bottom: 12px; }
+    .empty-card p { font-size: 14px; color: var(--gray-500); }
+
+    /* ── INSTRUÇÃO PARA O PROFESSOR ── */
+    .teacher-note {
+      margin-top: 48px;
+      background: var(--blue-50);
+      border: 1.5px solid var(--blue-100);
+      border-radius: var(--radius-lg);
+      padding: 24px 28px;
+    }
+
+    .teacher-note h3 {
+      font-family: 'Sora', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--blue-800);
+      margin-bottom: 10px;
+    }
+
+    .teacher-note p {
+      font-size: 13px;
+      color: var(--gray-700);
+      line-height: 1.65;
+      margin-bottom: 8px;
+    }
+
+    .teacher-note code {
+      background: rgba(21,101,192,0.1);
+      padding: 1px 6px;
+      border-radius: 4px;
+      font-size: 12px;
+      color: var(--blue-800);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--blue-900);
+      padding: 28px 5%;
+      text-align: center;
+    }
+
+    footer p {
+      font-size: 12px;
+      color: rgba(255,255,255,0.4);
+    }
+
+    /* ── HIDDEN filter logic ── */
+    .simulado-card[data-hidden="true"] {
+      display: none;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 600px) {
+      .header-decoration { display: none; }
+      .stats-inner { flex-wrap: wrap; gap: 4px; }
+      .stat-item { padding: 12px 16px 12px 0; }
+      .stat-item + .stat-item { padding-left: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══ CABEÇALHO ══ -->
+<header>
+  <div class="header-inner">
+    <div class="header-text">
+      <p class="header-eyebrow">Portal Educacional</p>
+      <h1>Prof. Wanderson<br><span>Schneider</span></h1>
+      <p>Simulados e exercícios de Matemática e Física para o Ensino Médio. Estude no seu ritmo, veja o gabarito e acompanhe sua evolução.</p>
+      <div class="header-badges">
+        <span class="badge"><span class="badge-icon">∑</span> Matemática</span>
+        <span class="badge"><span class="badge-icon">⚡</span> Física</span>
+        <span class="badge"><span class="badge-icon">🎓</span> Ensino Médio</span>
+      </div>
+    </div>
+    <div class="header-decoration" aria-hidden="true">
+      <span class="math-symbol ms-small">π</span>
+      <span class="math-symbol ms-big">∑</span>
+    </div>
+  </div>
+</header>
+
+<!-- ══ BARRA DE ESTATÍSTICAS ══ -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <div>
+        <div class="stat-num" id="total-simulados">3</div>
+        <div class="stat-label">Simulados disponíveis</div>
+      </div>
+    </div>
+    <div class="stat-item">
+      <div>
+        <div class="stat-num">2</div>
+        <div class="stat-label">Disciplinas</div>
+      </div>
+    </div>
+    <div class="stat-item">
+      <div>
+        <div class="stat-num">Gratuito</div>
+        <div class="stat-label">Acesso livre</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ CONTEÚDO PRINCIPAL ══ -->
+<main>
+  <p class="section-title">Materiais de estudo</p>
+  <h2 class="section-heading">Simulados disponíveis</h2>
+
+  <!-- Filtros -->
+  <div class="filters" role="group" aria-label="Filtrar por disciplina">
+    <button class="filter-btn active" data-filter="todos" onclick="filtrar(this)">Todos</button>
+    <button class="filter-btn" data-filter="matematica" onclick="filtrar(this)">Matemática</button>
+    <button class="filter-btn" data-filter="fisica" onclick="filtrar(this)">Física</button>
+  </div>
+
+  <!-- ══ GRADE DE SIMULADOS ══
+       Para adicionar um novo simulado:
+       1. Copie um bloco <article class="simulado-card"> abaixo
+       2. Altere: data-subject, o título, a descrição, as meta-informações e o href do botão
+       3. Salve e reenvie a pasta ao Netlify
+  -->
+  <div class="simulado-grid" id="grid">
+
+    <!-- ── Integrais_subst_por_partes ── -->
+    <article class="Integrais_subst_por_partes" data-subject="matematica">
+      <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simulado — Cálculo Integral</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:Georgia,serif;background:#f5f0e8;color:#2c2c2a;min-height:100vh}
+  .container{max-width:780px;margin:0 auto;padding:2rem 1rem}
+  h1{font-size:26px;font-weight:700;color:#1a1a18;margin-bottom:6px}
+  .subtitle{font-size:14px;color:#666;margin-bottom:2rem}
+  .card{background:#fff;border:1px solid #ddd;border-radius:10px;padding:1.5rem;margin-bottom:1.2rem}
+  label{display:block;font-size:13px;color:#555;margin-bottom:6px;font-weight:600}
+  input[type=text],input[type=password]{width:100%;padding:10px 14px;font-size:15px;border:1px solid #ccc;border-radius:8px;font-family:Georgia,serif;margin-bottom:0}
+  input:focus{outline:none;border-color:#0F6E56}
+  .field{margin-bottom:1rem}
+  .timer-opts{display:flex;gap:8px;flex-wrap:wrap;margin-top:4px}
+  .topt{padding:7px 16px;font-size:13px;border:1px solid #ccc;border-radius:8px;cursor:pointer;background:#fff}
+  .topt.active{background:#0F6E56;color:#fff;border-color:#0F6E56}
+  .btn{display:block;width:100%;padding:12px;font-size:16px;font-weight:700;background:#0F6E56;color:#fff;border:none;border-radius:8px;cursor:pointer;margin-top:1rem;font-family:Georgia,serif}
+  .btn:hover{background:#085041}
+  .btn-outline{background:#fff;color:#0F6E56;border:2px solid #0F6E56}
+  .btn-outline:hover{background:#f0faf6}
+  .timer-bar{display:flex;align-items:center;gap:14px;background:#fff;border:1px solid #ddd;border-radius:10px;padding:1rem 1.2rem;margin-bottom:1rem;position:sticky;top:10px;z-index:10;box-shadow:0 2px 8px rgba(0,0,0,.08)}
+  .timer-num{font-size:26px;font-weight:700;font-variant-numeric:tabular-nums;color:#0F6E56;min-width:80px}
+  .timer-num.urgent{color:#c0392b}
+  .timer-info{flex:1;font-size:13px;color:#666}
+  .prog-wrap{width:120px;height:6px;background:#eee;border-radius:3px;overflow:hidden}
+  .prog-fill{height:100%;background:#0F6E56;border-radius:3px;transition:width 1s linear}
+  .prog-fill.urgent{background:#c0392b}
+  .nav-dots{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:1rem}
+  .dot{width:30px;height:30px;border-radius:50%;border:1px solid #ddd;font-size:12px;font-weight:600;display:flex;align-items:center;justify-content:center;cursor:pointer;background:#fff;color:#666}
+  .dot.answered{background:#0F6E56;color:#fff;border-color:#0F6E56}
+  .dot.current{border-color:#185FA5;color:#185FA5}
+  .sec-title{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#0F6E56;margin:1.5rem 0 0.5rem}
+  .qcard{background:#fff;border:1px solid #ddd;border-radius:10px;padding:1.4rem;margin-bottom:1rem}
+  .qnum{font-size:12px;color:#0F6E56;font-weight:700;margin-bottom:6px}
+  .qtext{font-size:16px;line-height:1.7;margin-bottom:1.2rem;color:#1a1a18}
+  .opt{display:flex;align-items:flex-start;gap:12px;padding:10px 12px;border:1px solid #ddd;border-radius:8px;cursor:pointer;margin-bottom:7px;transition:background .15s}
+  .opt:hover{background:#f0faf6}
+  .opt.selected{background:#e1f5ee;border-color:#1D9E75}
+  .opt.correct{background:#d4edda;border-color:#155724}
+  .opt.wrong{background:#f8d7da;border-color:#721c24}
+  .opt-letter{width:26px;height:26px;border-radius:50%;background:#f0f0ec;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;margin-top:1px;color:#555}
+  .opt.selected .opt-letter{background:#1D9E75;color:#fff}
+  .opt.correct .opt-letter{background:#155724;color:#fff}
+  .opt.wrong .opt-letter{background:#721c24;color:#fff}
+  .opt-text{font-size:14px;line-height:1.5}
+  .result-header{background:#fff;border:1px solid #ddd;border-radius:10px;padding:2rem;text-align:center;margin-bottom:1.2rem}
+  .score-big{font-size:56px;font-weight:700;color:#0F6E56}
+  .score-sub{font-size:15px;color:#666;margin-top:6px}
+  .badge{display:inline-block;padding:5px 16px;border-radius:8px;font-size:14px;font-weight:700;margin-top:12px}
+  .badge-a{background:#d4edda;color:#155724}
+  .badge-b{background:#d1ecf1;color:#0c5460}
+  .badge-c{background:#fff3cd;color:#856404}
+  .badge-d{background:#f8d7da;color:#721c24}
+  .info-row{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:10px}
+  .info-chip{background:#f5f0e8;border:1px solid #ddd;border-radius:6px;padding:4px 12px;font-size:13px;color:#555}
+  .sol-card{background:#fff;border:1px solid #ddd;border-radius:10px;padding:1.2rem;margin-bottom:1rem}
+  .sol-head{display:flex;gap:10px;align-items:flex-start;margin-bottom:8px}
+  .sol-icon{width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0}
+  .sol-ok{background:#d4edda;color:#155724}
+  .sol-err{background:#f8d7da;color:#721c24}
+  .sol-q{font-size:14px;font-weight:600;line-height:1.5}
+  .sol-body{border-top:1px solid #eee;padding-top:10px;margin-top:8px;font-size:13px;color:#444;line-height:1.8}
+  .sol-correct{background:#d4edda;color:#155724;padding:4px 12px;border-radius:6px;font-size:13px;font-weight:600;display:inline-block;margin-bottom:8px}
+  .sol-wrong{background:#f8d7da;color:#721c24;padding:4px 12px;border-radius:6px;font-size:13px;font-weight:600;display:inline-block;margin-bottom:6px}
+  .tbl{width:100%;border-collapse:collapse;font-size:13px;margin-bottom:1rem}
+  .tbl th{text-align:left;padding:8px 10px;border-bottom:2px solid #0F6E56;color:#0F6E56;font-weight:700;white-space:nowrap}
+  .tbl td{padding:8px 10px;border-bottom:1px solid #eee;vertical-align:middle}
+  .tbl tr:hover td{background:#f9f9f7}
+  .modal-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.5);display:flex;align-items:center;justify-content:center;z-index:100}
+  .modal{background:#fff;border-radius:12px;padding:2rem;width:90%;max-width:360px;text-align:center}
+  .modal h3{font-size:18px;margin-bottom:1rem;color:#1a1a18}
+  .modal input{margin-bottom:1rem}
+  .modal p.err{color:#c0392b;font-size:13px;margin-bottom:0.5rem}
+  .clear-btn{background:#fff;color:#c0392b;border:1px solid #c0392b;border-radius:8px;padding:7px 16px;font-size:13px;cursor:pointer;margin-top:0.5rem;font-family:Georgia,serif}
+  .clear-btn:hover{background:#f8d7da}
+  @media(max-width:500px){.score-big{font-size:40px}.timer-num{font-size:20px}.tbl{font-size:11px}.tbl th,.tbl td{padding:5px 6px}}
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- SETUP (professor) -->
+<div id="setup">
+  <h1>Simulado — Cálculo Integral</h1>
+  <p class="subtitle">Substituição simples &amp; integração por partes · 15 questões</p>
+  <div class="card">
+    <h2 style="font-size:16px;margin-bottom:1rem;color:#0F6E56">⚙️ Configuração do Professor</h2>
+    <div class="field">
+      <label>Senha do professor (somente você terá acesso a todos os resultados)</label>
+      <input type="password" id="teacher-pass" placeholder="Defina uma senha secreta" />
+    </div>
+    <div class="field">
+      <label>Tempo da prova</label>
+      <div class="timer-opts" id="topts">
+        <div class="topt" data-m="20">20 min</div>
+        <div class="topt active" data-m="40">40 min</div>
+        <div class="topt" data-m="60">60 min</div>
+        <div class="topt" data-m="90">90 min</div>
+      </div>
+    </div>
+    <button class="btn" onclick="goStudent()">Salvar e ir para tela do aluno ▶</button>
+  </div>
+</div>
+
+<!-- STUDENT START -->
+<div id="student-start" style="display:none">
+  <h1>Simulado — Cálculo Integral</h1>
+  <p class="subtitle">Substituição simples &amp; integração por partes · 15 questões</p>
+  <div class="card">
+    <h2 style="font-size:16px;margin-bottom:1rem;color:#0F6E56">📋 Identificação do Aluno</h2>
+    <div class="field">
+      <label>Nome completo *</label>
+      <input type="text" id="sname" placeholder="Ex: João da Silva" />
+    </div>
+    <div class="field">
+      <label>Escola / Instituição *</label>
+      <input type="text" id="sschool" placeholder="Ex: UFES, IFES, Colégio XYZ..." />
+    </div>
+    <div class="field">
+      <label>Curso *</label>
+      <input type="text" id="scourse" placeholder="Ex: Engenharia Civil, Matemática, Física..." />
+    </div>
+    <button class="btn" onclick="startExam()">Iniciar prova ▶</button>
+    <button class="btn btn-outline" style="margin-top:8px" onclick="openTeacher()">🔒 Acesso do professor</button>
+  </div>
+</div>
+
+<!-- EXAM -->
+<div id="exam" style="display:none">
+  <div class="timer-bar">
+    <div class="timer-num" id="tdisp">40:00</div>
+    <div class="timer-info" id="tinfo">Tempo restante</div>
+    <div class="prog-wrap"><div class="prog-fill" id="pfill" style="width:100%"></div></div>
+  </div>
+  <div style="background:#fff;border:1px solid #ddd;border-radius:8px;padding:8px 14px;margin-bottom:1rem;font-size:13px;color:#555" id="exam-info-bar"></div>
+  <div class="nav-dots" id="navdots"></div>
+  <div id="qarea"></div>
+  <button class="btn" id="finbtn" onclick="finishExam()">Finalizar prova</button>
+</div>
+
+<!-- STUDENT RESULT -->
+<div id="result" style="display:none">
+  <div class="result-header">
+    <div style="font-size:13px;font-weight:700;color:#0F6E56;margin-bottom:8px">RESULTADO DA PROVA</div>
+    <div class="score-big" id="rscore"></div>
+    <div class="score-sub" id="rpct"></div>
+    <div class="badge badge-a" id="rbadge"></div>
+    <div class="info-row" id="rinfo-chips"></div>
+  </div>
+  <p class="sec-title">Resolução detalhada</p>
+  <div id="solarea"></div>
+  <button class="btn btn-outline" onclick="location.reload()">Nova tentativa</button>
+</div>
+
+<!-- TEACHER PANEL -->
+<div id="teacher" style="display:none">
+  <h1>Painel do Professor</h1>
+  <p class="subtitle">Resultados de todos os alunos — visível apenas com senha</p>
+  <div class="card">
+    <div style="overflow-x:auto">
+      <table class="tbl" id="rtable">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Nome</th>
+            <th>Escola</th>
+            <th>Curso</th>
+            <th>Acertos</th>
+            <th>Nota</th>
+            <th>Conceito</th>
+            <th>Data/Hora</th>
+          </tr>
+        </thead>
+        <tbody id="rtbody"></tbody>
+      </table>
+    </div>
+    <p id="noresult" style="text-align:center;color:#999;font-size:14px;padding:1rem;display:none">Nenhum resultado registrado ainda.</p>
+    <button class="clear-btn" onclick="clearResults()">🗑 Limpar todos os resultados</button>
+  </div>
+  <button class="btn btn-outline" onclick="backToStudent()">← Voltar para tela do aluno</button>
+</div>
+
+<!-- TEACHER MODAL -->
+<div class="modal-overlay" id="tmodal" style="display:none">
+  <div class="modal">
+    <h3>🔒 Acesso do Professor</h3>
+    <p style="font-size:13px;color:#666;margin-bottom:1rem">Digite a senha para acessar o painel de resultados.</p>
+    <p class="err" id="tmodal-err" style="display:none">Senha incorreta. Tente novamente.</p>
+    <input type="password" id="tpass-input" placeholder="Senha do professor" onkeydown="if(event.key==='Enter')checkTeacherPass()" />
+    <button class="btn" onclick="checkTeacherPass()">Entrar</button>
+    <button class="btn btn-outline" style="margin-top:8px" onclick="closeModal()">Cancelar</button>
+  </div>
+</div>
+
+</div>
+<script>
+const QS=[
+  {t:0,q:"Calcule ∫ 2x·(x² + 1)⁴ dx",opts:["(x²+1)⁵/5 + C","(x²+1)⁵ + C","2(x²+1)⁵/5 + C","(x²+1)⁴/4 + C","(x²+1)⁵/10 + C"],ans:0,sol:["Faça u = x² + 1, então du = 2x dx.","A integral vira ∫ u⁴ du = u⁵/5 + C.","Substituindo: (x²+1)⁵/5 + C."]},
+  {t:0,q:"Calcule ∫ cos(3x) dx",opts:["sin(3x) + C","−sin(3x)/3 + C","sin(3x)/3 + C","3·sin(3x) + C","cos(3x)/3 + C"],ans:2,sol:["Faça u = 3x, du = 3dx → dx = du/3.","∫ cos(u)·(du/3) = (1/3)sin(u) + C.","Resultado: sin(3x)/3 + C."]},
+  {t:0,q:"Calcule ∫ x·e^(x²) dx",opts:["e^(x²) + C","2e^(x²) + C","(1/2)e^(x²) + C","x·e^(x²) + C","(1/2)x·e^(x²) + C"],ans:2,sol:["Faça u = x², du = 2x dx → x dx = du/2.","∫ eᵘ·(du/2) = (1/2)eᵘ + C.","Resultado: (1/2)e^(x²) + C."]},
+  {t:0,q:"Calcule ∫ (2x+1)/(x²+x+5) dx",opts:["ln|2x+1| + C","ln|x²+x+5| + C","2·ln|x²+x+5| + C","1/(x²+x+5) + C","ln|x+5| + C"],ans:1,sol:["A derivada do denominador é exatamente 2x+1.","Faça u = x²+x+5, du = (2x+1)dx.","∫ du/u = ln|u| + C = ln|x²+x+5| + C."]},
+  {t:0,q:"Calcule ∫ sen(x)·cos(x) dx",opts:["sin²(x) + C","sin²(x)/2 + C","cos²(x)/2 + C","−cos²(x)/2 + C","sin(x)cos(x)/2 + C"],ans:1,sol:["Faça u = sin(x), du = cos(x)dx.","∫ u du = u²/2 + C.","Resultado: sin²(x)/2 + C."]},
+  {t:0,q:"Calcule ∫ √(x+1) dx",opts:["(x+1)^(3/2) + C","(1/2)√(x+1) + C","(2/3)(x+1)^(3/2) + C","2√(x+1) + C","(3/2)(x+1)^(1/2) + C"],ans:2,sol:["Faça u = x+1, du = dx.","∫ u^(1/2) du = (2/3)u^(3/2) + C.","Resultado: (2/3)(x+1)^(3/2) + C."]},
+  {t:0,q:"Calcule ∫ e^(2x) dx",opts:["e^(2x) + C","2e^(2x) + C","(1/2)e^(2x) + C","eˣ + C","(1/2)eˣ + C"],ans:2,sol:["Faça u = 2x, du = 2dx → dx = du/2.","∫ eᵘ·(du/2) = (1/2)eᵘ + C.","Resultado: (1/2)e^(2x) + C."]},
+  {t:0,q:"Calcule ∫ x/√(x²+4) dx",opts:["(1/2)√(x²+4) + C","√(x²+4) + C","2√(x²+4) + C","ln(x²+4) + C","x√(x²+4) + C"],ans:1,sol:["Faça u = x²+4, du = 2x dx → x dx = du/2.","∫ (du/2)/√u = √u + C.","Resultado: √(x²+4) + C."]},
+  {t:1,q:"Calcule ∫ x·eˣ dx  [use: ∫u dv = uv − ∫v du]",opts:["x·eˣ + C","eˣ(x+1) + C","eˣ(x−1) + C","x²eˣ/2 + C","eˣ − x + C"],ans:2,sol:["u = x, dv = eˣdx → du = dx, v = eˣ.","= x·eˣ − ∫ eˣdx = x·eˣ − eˣ + C.","Resultado: eˣ(x−1) + C."]},
+  {t:1,q:"Calcule ∫ x·sin(x) dx",opts:["x·cos(x)+sin(x)+C","−x·cos(x)−sin(x)+C","−x·cos(x)+sin(x)+C","x·sin(x)−cos(x)+C","x·cos(x)−sin(x)+C"],ans:2,sol:["u = x, dv = sin(x)dx → du = dx, v = −cos(x).","= −x·cos(x) + ∫ cos(x)dx.","= −x·cos(x) + sin(x) + C."]},
+  {t:1,q:"Calcule ∫ ln(x) dx",opts:["x·ln(x)+C","x·ln(x)−x+C","x/ln(x)+C","ln(x)/x+C","x·ln(x)+x+C"],ans:1,sol:["u = ln(x), dv = dx → du = dx/x, v = x.","= x·ln(x) − ∫ x·(1/x)dx = x·ln(x) − ∫ dx.","= x·ln(x) − x + C."]},
+  {t:1,q:"Calcule ∫ x·cos(x) dx",opts:["x·sin(x)−cos(x)+C","x·cos(x)+sin(x)+C","x·sin(x)+cos(x)+C","sin(x)+cos(x)+C","x²·sin(x)/2+C"],ans:2,sol:["u = x, dv = cos(x)dx → du = dx, v = sin(x).","= x·sin(x) − ∫ sin(x)dx = x·sin(x)+cos(x)+C."]},
+  {t:1,q:"Calcule ∫ x²·eˣ dx  (aplique partes duas vezes)",opts:["eˣ(x²+2x+2)+C","eˣ(x²−2x−2)+C","eˣ(x²−2x+2)+C","x²eˣ−2xeˣ+C","eˣ(x²+2)+C"],ans:2,sol:["1ª aplicação: u=x², dv=eˣdx → x²eˣ − 2∫xeˣdx.","∫xeˣdx = eˣ(x−1) (questão 9).","= x²eˣ − 2eˣ(x−1) = eˣ(x²−2x+2)+C."]},
+  {t:1,q:"Calcule ∫ arctan(x) dx",opts:["x·arctan(x)+C","x·arctan(x)−ln(1+x²)+C","arctan(x)/x+C","x·arctan(x)−(1/2)ln(1+x²)+C","x·arctan(x)+(1/2)ln(1+x²)+C"],ans:3,sol:["u=arctan(x), dv=dx → du=dx/(1+x²), v=x.","= x·arctan(x) − ∫ x/(1+x²)dx.","∫x/(1+x²)dx = (1/2)ln(1+x²). Resultado: x·arctan(x)−(1/2)ln(1+x²)+C."]},
+  {t:1,q:"Calcule ∫ eˣ·cos(x) dx  (partes cíclico)",opts:["eˣ·sin(x)+C","eˣ·cos(x)+C","eˣ(sin(x)−cos(x))/2+C","eˣ(sin(x)+cos(x))/2+C","eˣ·sin(x)·cos(x)+C"],ans:3,sol:["Aplique partes: I = eˣsin(x) − ∫eˣsin(x)dx.","Aplique partes de novo: ∫eˣsin(x)dx = −eˣcos(x)+∫eˣcos(x)dx.","Então 2I = eˣ(sin(x)+cos(x)) → I = eˣ(sin(x)+cos(x))/2+C."]}
+];
+
+let teacherPass='',selTime=40,answers=new Array(15).fill(-1),timerSec,totalSec,tInterval;
+let studentName='',studentSchool='',studentCourse='';
+
+document.querySelectorAll('.topt').forEach(el=>{
+  el.addEventListener('click',()=>{
+    document.querySelectorAll('.topt').forEach(e=>e.classList.remove('active'));
+    el.classList.add('active'); selTime=parseInt(el.dataset.m);
+  });
+});
+
+function goStudent(){
+  teacherPass=document.getElementById('teacher-pass').value.trim();
+  if(!teacherPass){alert('Por favor, defina uma senha de professor antes de continuar.');return;}
+  document.getElementById('setup').style.display='none';
+  document.getElementById('student-start').style.display='block';
+}
+
+function startExam(){
+  studentName=document.getElementById('sname').value.trim();
+  studentSchool=document.getElementById('sschool').value.trim();
+  studentCourse=document.getElementById('scourse').value.trim();
+  if(!studentName){alert('Por favor, informe seu nome completo.');return;}
+  if(!studentSchool){alert('Por favor, informe sua escola/instituição.');return;}
+  if(!studentCourse){alert('Por favor, informe seu curso.');return;}
+  document.getElementById('student-start').style.display='none';
+  document.getElementById('exam').style.display='block';
+  document.getElementById('exam-info-bar').innerHTML=
+    `<b>Aluno:</b> ${studentName} &nbsp;|&nbsp; <b>Escola:</b> ${studentSchool} &nbsp;|&nbsp; <b>Curso:</b> ${studentCourse}`;
+  totalSec=timerSec=selTime*60;
+  buildNav(); buildQuestions(); updateTimer();
+  tInterval=setInterval(()=>{timerSec--;updateTimer();if(timerSec<=0){clearInterval(tInterval);finishExam(true);}},1000);
+}
+
+function buildNav(){
+  const w=document.getElementById('navdots');w.innerHTML='';
+  QS.forEach((_,i)=>{
+    const d=document.createElement('div');
+    d.className='dot'+(i===0?' current':'');d.id='dot'+i;d.textContent=i+1;
+    d.onclick=()=>document.getElementById('q'+i)?.scrollIntoView({behavior:'smooth',block:'start'});
+    w.appendChild(d);
+  });
+}
+
+function buildQuestions(){
+  const a=document.getElementById('qarea');a.innerHTML='';let last=-1;
+  QS.forEach((q,qi)=>{
+    if(q.t!==last){
+      const s=document.createElement('p');s.className='sec-title';
+      s.textContent=q.t===0?'Parte I — Substituição simples':'Parte II — Integração por partes';
+      a.appendChild(s);last=q.t;
+    }
+    const c=document.createElement('div');c.className='qcard';c.id='q'+qi;
+    let h=`<div class="qnum">Questão ${qi+1} de 15</div><div class="qtext">${q.q}</div>`;
+    q.opts.forEach((o,oi)=>{h+=`<div class="opt" id="o${qi}_${oi}" onclick="pick(${qi},${oi})"><div class="opt-letter">${'ABCDE'[oi]}</div><div class="opt-text">${o}</div></div>`;});
+    c.innerHTML=h;a.appendChild(c);
+  });
+}
+
+function pick(qi,oi){
+  const prev=answers[qi];
+  if(prev>=0)document.getElementById(`o${qi}_${prev}`)?.classList.remove('selected');
+  answers[qi]=oi;
+  document.getElementById(`o${qi}_${oi}`)?.classList.add('selected');
+  const d=document.getElementById('dot'+qi);if(d)d.classList.add('answered');
+  const done=answers.filter(a=>a>=0).length;
+  document.getElementById('finbtn').textContent=done===15?'Finalizar prova ✓':`Finalizar prova (${done}/15 respondidas)`;
+}
+
+function updateTimer(){
+  const m=Math.floor(timerSec/60),s=timerSec%60;
+  document.getElementById('tdisp').textContent=String(m).padStart(2,'0')+':'+String(s).padStart(2,'0');
+  document.getElementById('pfill').style.width=Math.max(0,(timerSec/totalSec)*100)+'%';
+  const urg=timerSec<=120;
+  document.getElementById('tdisp').classList.toggle('urgent',urg);
+  document.getElementById('pfill').classList.toggle('urgent',urg);
+  document.getElementById('tinfo').textContent=urg?'⚠ Tempo acabando!':'Tempo restante';
+}
+
+function finishExam(timeout=false){
+  clearInterval(tInterval);
+  let correct=0;
+  QS.forEach((q,i)=>{if(answers[i]===q.ans)correct++;});
+  const pct=Math.round((correct/15)*100);
+  const ts=new Date().toLocaleString('pt-BR');
+  try{
+    let arr=JSON.parse(localStorage.getItem('simulado_results')||'[]');
+    arr.push({name:studentName,school:studentSchool,course:studentCourse,correct,pct,time:ts});
+    localStorage.setItem('simulado_results',JSON.stringify(arr));
+  }catch(e){}
+  document.getElementById('exam').style.display='none';
+  document.getElementById('result').style.display='block';
+  document.getElementById('rscore').textContent=correct+'/15';
+  document.getElementById('rpct').textContent=pct+'% de acertos'+(timeout?' · tempo esgotado':'');
+  const b=document.getElementById('rbadge');
+  if(pct>=90){b.textContent='Excelente — A';b.className='badge badge-a';}
+  else if(pct>=70){b.textContent='Bom — B';b.className='badge badge-b';}
+  else if(pct>=50){b.textContent='Regular — C';b.className='badge badge-c';}
+  else{b.textContent='Insuficiente — D';b.className='badge badge-d';}
+  document.getElementById('rinfo-chips').innerHTML=
+    `<div class="info-chip">👤 ${studentName}</div><div class="info-chip">🏫 ${studentSchool}</div><div class="info-chip">📚 ${studentCourse}</div>`;
+  buildSolutions();
+}
+
+function buildSolutions(){
+  const a=document.getElementById('solarea');a.innerHTML='';
+  QS.forEach((q,i)=>{
+    const ok=answers[i]===q.ans;
+    const c=document.createElement('div');c.className='sol-card';
+    let h=`<div class="sol-head"><div class="sol-icon ${ok?'sol-ok':'sol-err'}">${ok?'✓':'✗'}</div><div class="sol-q">Q${i+1}: ${q.q}</div></div><div class="sol-body">`;
+    if(!ok&&answers[i]>=0)h+=`<div class="sol-wrong">Sua resposta: ${'ABCDE'[answers[i]]}) ${q.opts[answers[i]]}</div><br>`;
+    h+=`<div class="sol-correct">Resposta correta: ${'ABCDE'[q.ans]}) ${q.opts[q.ans]}</div><br>`;
+    q.sol.forEach((s,si)=>{h+=`<b>${si+1}.</b> ${s}<br>`;});
+    h+='</div>';c.innerHTML=h;a.appendChild(c);
+  });
+}
+
+function openTeacher(){document.getElementById('tmodal').style.display='flex';}
+function closeModal(){document.getElementById('tmodal').style.display='none';document.getElementById('tmodal-err').style.display='none';document.getElementById('tpass-input').value='';}
+
+function checkTeacherPass(){
+  if(document.getElementById('tpass-input').value===teacherPass){
+    closeModal();
+    ['student-start','exam','result'].forEach(id=>document.getElementById(id).style.display='none');
+    document.getElementById('teacher').style.display='block';
+    loadResults();
+  }else{
+    document.getElementById('tmodal-err').style.display='block';
+  }
+}
+
+function loadResults(){
+  try{
+    const arr=JSON.parse(localStorage.getItem('simulado_results')||'[]');
+    const tb=document.getElementById('rtbody');tb.innerHTML='';
+    if(arr.length===0){document.getElementById('noresult').style.display='block';return;}
+    document.getElementById('noresult').style.display='none';
+    arr.forEach((r,i)=>{
+      let conceito='';
+      if(r.pct>=90)conceito='<span style="color:#155724;font-weight:700">A — Excelente</span>';
+      else if(r.pct>=70)conceito='<span style="color:#0c5460;font-weight:700">B — Bom</span>';
+      else if(r.pct>=50)conceito='<span style="color:#856404;font-weight:700">C — Regular</span>';
+      else conceito='<span style="color:#721c24;font-weight:700">D — Insuficiente</span>';
+      const tr=document.createElement('tr');
+      tr.innerHTML=`<td>${i+1}</td><td>${r.name}</td><td>${r.school||'—'}</td><td>${r.course||'—'}</td><td>${r.correct}/15</td><td>${r.pct}%</td><td>${conceito}</td><td>${r.time}</td>`;
+      tb.appendChild(tr);
+    });
+  }catch(e){}
+}
+
+function clearResults(){
+  if(confirm('Tem certeza que deseja apagar todos os resultados? Esta ação não pode ser desfeita.')){
+    localStorage.removeItem('simulado_results');
+    document.getElementById('rtbody').innerHTML='';
+    document.getElementById('noresult').style.display='block';
+  }
+}
+
+function backToStudent(){
+  document.getElementById('teacher').style.display='none';
+  document.getElementById('student-start').style.display='block';
+}
+</script>
+</body>
+</html>
+
+    </article>
+
+    <!-- ── SIMULADO 2 ── -->
+    <article class="simulado-card" data-subject="fisica">
+      <<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simulado — Cálculo Integral</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:Georgia,serif;background:#f5f0e8;color:#2c2c2a;min-height:100vh}
+  .container{max-width:760px;margin:0 auto;padding:2rem 1rem 4rem}
+  h1{font-size:24px;font-weight:700;color:#1a1a18;margin-bottom:4px}
+  .subtitle{font-size:13px;color:#888;margin-bottom:1.8rem}
+  .card{background:#fff;border:1px solid #ddd;border-radius:10px;padding:1.5rem;margin-bottom:1.2rem}
+  .card-title{font-size:15px;font-weight:700;color:#0F6E56;margin-bottom:1rem;padding-bottom:8px;border-bottom:1px solid #eee}
+  .field{margin-bottom:1rem}
+  label{display:block;font-size:13px;color:#555;margin-bottom:5px;font-weight:600}
+  input[type=text],input[type=password]{width:100%;padding:10px 14px;font-size:15px;border:1px solid #ccc;border-radius:8px;font-family:Georgia,serif;background:#fff;color:#1a1a18}
+  input:focus{outline:none;border-color:#0F6E56;box-shadow:0 0 0 3px rgba(15,110,86,.1)}
+  .btn{display:block;width:100%;padding:12px;font-size:15px;font-weight:700;background:#0F6E56;color:#fff;border:none;border-radius:8px;cursor:pointer;font-family:Georgia,serif;transition:background .2s}
+  .btn:hover{background:#085041}
+  .btn-sm{display:inline-block;width:auto;padding:8px 18px;font-size:13px}
+  .btn-outline{background:#fff;color:#0F6E56;border:2px solid #0F6E56}
+  .btn-outline:hover{background:#f0faf6}
+  .btn-danger{background:#fff;color:#c0392b;border:1px solid #c0392b;border-radius:8px;padding:8px 16px;font-size:13px;cursor:pointer;font-family:Georgia,serif}
+  .btn-danger:hover{background:#f8d7da}
+  .timer-bar{display:flex;align-items:center;gap:14px;background:#fff;border:1px solid #ddd;border-radius:10px;padding:.9rem 1.2rem;margin-bottom:1rem;position:sticky;top:8px;z-index:10;box-shadow:0 2px 8px rgba(0,0,0,.07)}
+  .tnum{font-size:26px;font-weight:700;font-variant-numeric:tabular-nums;color:#0F6E56;min-width:78px}
+  .tnum.urgent{color:#c0392b}
+  .tinfo{flex:1;font-size:13px;color:#777}
+  .prog-wrap{width:110px;height:5px;background:#eee;border-radius:3px;overflow:hidden}
+  .prog-fill{height:100%;background:#0F6E56;border-radius:3px;transition:width 1s linear}
+  .prog-fill.urgent{background:#c0392b}
+  .student-bar{background:#fff;border:1px solid #eee;border-radius:8px;padding:7px 14px;margin-bottom:1rem;font-size:13px;color:#555}
+  .nav-dots{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:1rem}
+  .dot{width:28px;height:28px;border-radius:50%;border:1px solid #ddd;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;cursor:pointer;background:#fff;color:#888;transition:all .15s}
+  .dot.answered{background:#0F6E56;color:#fff;border-color:#0F6E56}
+  .sec-lbl{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#0F6E56;margin:1.4rem 0 .4rem}
+  .qcard{background:#fff;border:1px solid #ddd;border-radius:10px;padding:1.3rem;margin-bottom:.9rem}
+  .qnum{font-size:11px;color:#0F6E56;font-weight:700;margin-bottom:5px}
+  .qtext{font-size:15px;line-height:1.7;margin-bottom:1.1rem;color:#1a1a18}
+  .opt{display:flex;align-items:flex-start;gap:11px;padding:9px 11px;border:1px solid #ddd;border-radius:7px;cursor:pointer;margin-bottom:6px;transition:background .12s}
+  .opt:hover{background:#f0faf6}
+  .opt.selected{background:#e1f5ee;border-color:#1D9E75}
+  .opt.correct{background:#d4edda;border-color:#155724}
+  .opt.wrong{background:#f8d7da;border-color:#721c24}
+  .oletter{width:24px;height:24px;border-radius:50%;background:#f0f0ec;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;margin-top:1px;color:#666}
+  .opt.selected .oletter{background:#1D9E75;color:#fff}
+  .opt.correct .oletter{background:#155724;color:#fff}
+  .opt.wrong .oletter{background:#721c24;color:#fff}
+  .otext{font-size:14px;line-height:1.5}
+  .res-header{background:#fff;border:1px solid #ddd;border-radius:10px;padding:1.8rem;text-align:center;margin-bottom:1.2rem}
+  .score-big{font-size:52px;font-weight:700;color:#0F6E56;line-height:1}
+  .score-sub{font-size:14px;color:#777;margin-top:5px}
+  .badge{display:inline-block;padding:5px 16px;border-radius:7px;font-size:13px;font-weight:700;margin-top:10px}
+  .ba{background:#d4edda;color:#155724}.bb{background:#d1ecf1;color:#0c5460}
+  .bc{background:#fff3cd;color:#856404}.bd{background:#f8d7da;color:#721c24}
+  .chips{display:flex;gap:7px;flex-wrap:wrap;justify-content:center;margin-top:10px}
+  .chip{background:#f5f0e8;border:1px solid #ddd;border-radius:6px;padding:3px 11px;font-size:12px;color:#555}
+  .sol-card{background:#fff;border:1px solid #ddd;border-radius:10px;padding:1.1rem;margin-bottom:.9rem}
+  .sol-head{display:flex;gap:9px;align-items:flex-start;margin-bottom:7px}
+  .sol-icon{width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0}
+  .sok{background:#d4edda;color:#155724}.serr{background:#f8d7da;color:#721c24}
+  .sol-q{font-size:13px;font-weight:600;line-height:1.5}
+  .sol-body{border-top:1px solid #eee;padding-top:9px;margin-top:7px;font-size:12px;color:#444;line-height:1.8}
+  .scorrect{background:#d4edda;color:#155724;padding:3px 10px;border-radius:6px;font-size:12px;font-weight:600;display:inline-block;margin-bottom:7px}
+  .swrong{background:#f8d7da;color:#721c24;padding:3px 10px;border-radius:6px;font-size:12px;font-weight:600;display:inline-block;margin-bottom:5px}
+  .tbl-wrap{overflow-x:auto}
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  th{text-align:left;padding:8px 10px;border-bottom:2px solid #0F6E56;color:#0F6E56;font-weight:700;white-space:nowrap}
+  td{padding:7px 10px;border-bottom:1px solid #eee;vertical-align:middle}
+  tr:hover td{background:#fafaf8}
+  .overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.55);display:flex;align-items:center;justify-content:center;z-index:999}
+  .modal{background:#fff;border-radius:12px;padding:2rem;width:90%;max-width:340px;text-align:center}
+  .modal h3{font-size:17px;margin-bottom:.8rem}
+  .modal input{margin-bottom:.8rem}
+  .merr{color:#c0392b;font-size:13px;margin-bottom:.5rem;display:none}
+  .teacher-link{text-align:center;margin-top:2rem;font-size:12px;color:#bbb}
+  .teacher-link a{color:#bbb;text-decoration:none;cursor:pointer}
+  .teacher-link a:hover{color:#0F6E56}
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- ===== TELA DO ALUNO: CADASTRO ===== -->
+<div id="screen-register">
+  <h1>Simulado — Cálculo Integral</h1>
+  <p class="subtitle">Substituição simples &amp; integração por partes · 15 questões · Preencha seus dados para começar</p>
+  <div class="card">
+    <div class="card-title">📋 Seus dados</div>
+    <div class="field">
+      <label>Nome completo *</label>
+      <input type="text" id="sname" placeholder="Ex: João da Silva" />
+    </div>
+    <div class="field">
+      <label>Escola / Instituição *</label>
+      <input type="text" id="sschool" placeholder="Ex: UFES, IFES, Colégio XYZ..." />
+    </div>
+    <div class="field">
+      <label>Curso *</label>
+      <input type="text" id="scourse" placeholder="Ex: Engenharia Civil, Matemática..." />
+    </div>
+    <button class="btn" onclick="startExam()">Iniciar prova ▶</button>
+  </div>
+  <div class="teacher-link">
+    <a onclick="openTeacherModal()">Acesso restrito — Professor</a>
+  </div>
+</div>
+
+<!-- ===== TELA DA PROVA ===== -->
+<div id="screen-exam" style="display:none">
+  <div class="timer-bar">
+    <div class="tnum" id="tdisp">40:00</div>
+    <div class="tinfo" id="tinfo">Tempo restante</div>
+    <div class="prog-wrap"><div class="prog-fill" id="pfill" style="width:100%"></div></div>
+  </div>
+  <div class="student-bar" id="sbar"></div>
+  <div class="nav-dots" id="navdots"></div>
+  <div id="qarea"></div>
+  <button class="btn" id="finbtn" onclick="finishExam()">Finalizar prova</button>
+</div>
+
+<!-- ===== TELA DE RESULTADO DO ALUNO ===== -->
+<div id="screen-result" style="display:none">
+  <div class="res-header">
+    <div style="font-size:11px;font-weight:700;color:#0F6E56;letter-spacing:.06em;margin-bottom:8px">RESULTADO</div>
+    <div class="score-big" id="rscore"></div>
+    <div class="score-sub" id="rpct"></div>
+    <div class="badge ba" id="rbadge"></div>
+    <div class="chips" id="rchips"></div>
+  </div>
+  <p class="sec-lbl">Resolução detalhada</p>
+  <div id="solarea"></div>
+  <button class="btn btn-outline" style="margin-top:1rem" onclick="location.reload()">Fazer novamente</button>
+</div>
+
+<!-- ===== PAINEL DO PROFESSOR ===== -->
+<div id="screen-teacher" style="display:none">
+  <h1>Painel do Professor</h1>
+  <p class="subtitle">Resultados de todos os alunos</p>
+  <div class="card">
+    <div class="tbl-wrap">
+      <table>
+        <thead>
+          <tr><th>#</th><th>Nome</th><th>Escola</th><th>Curso</th><th>Acertos</th><th>Nota</th><th>Conceito</th><th>Data/Hora</th></tr>
+        </thead>
+        <tbody id="rtbody"></tbody>
+      </table>
+    </div>
+    <p id="nores" style="text-align:center;color:#aaa;font-size:14px;padding:1.2rem;display:none">Nenhum resultado ainda.</p>
+    <div style="margin-top:1rem;display:flex;gap:10px;flex-wrap:wrap">
+      <button class="btn btn-sm btn-outline" onclick="backToRegister()">← Voltar</button>
+      <button class="btn-danger" onclick="clearAll()">🗑 Limpar resultados</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===== MODAL SENHA PROFESSOR ===== -->
+<div class="overlay" id="modal" style="display:none">
+  <div class="modal">
+    <h3>🔒 Acesso do Professor</h3>
+    <p style="font-size:13px;color:#888;margin-bottom:1rem">Digite a senha para ver os resultados.</p>
+    <p class="merr" id="merr">Senha incorreta.</p>
+    <input type="password" id="tpass" placeholder="Senha do professor" onkeydown="if(event.key==='Enter')checkPass()" />
+    <button class="btn" onclick="checkPass()">Entrar</button>
+    <button class="btn btn-outline" style="margin-top:8px" onclick="closeModal()">Cancelar</button>
+  </div>
+</div>
+
+</div>
+<script>
+/* =========================================================
+   SENHA DO PROFESSOR — altere aqui se quiser outra senha
+   ========================================================= */
+const TEACHER_PASSWORD = "professor2024";
+
+/* =========================================================
+   TEMPO DA PROVA EM MINUTOS — altere aqui se quiser
+   ========================================================= */
+const EXAM_MINUTES = 40;
+
+/* =========================================================
+   QUESTÕES
+   ========================================================= */
+const QS=[
+  {t:0,q:"Calcule ∫ 2x·(x² + 1)⁴ dx",opts:["(x²+1)⁵/5 + C","(x²+1)⁵ + C","2(x²+1)⁵/5 + C","(x²+1)⁴/4 + C","(x²+1)⁵/10 + C"],ans:0,sol:["Faça u = x² + 1, então du = 2x dx.","A integral vira ∫ u⁴ du = u⁵/5 + C.","Substituindo: (x²+1)⁵/5 + C."]},
+  {t:0,q:"Calcule ∫ cos(3x) dx",opts:["sin(3x) + C","−sin(3x)/3 + C","sin(3x)/3 + C","3·sin(3x) + C","cos(3x)/3 + C"],ans:2,sol:["Faça u = 3x, du = 3dx → dx = du/3.","∫ cos(u)·(du/3) = (1/3)sin(u) + C.","Resultado: sin(3x)/3 + C."]},
+  {t:0,q:"Calcule ∫ x·e^(x²) dx",opts:["e^(x²) + C","2e^(x²) + C","(1/2)e^(x²) + C","x·e^(x²) + C","(1/2)x·e^(x²) + C"],ans:2,sol:["Faça u = x², du = 2x dx → x dx = du/2.","∫ eᵘ·(du/2) = (1/2)eᵘ + C.","Resultado: (1/2)e^(x²) + C."]},
+  {t:0,q:"Calcule ∫ (2x+1)/(x²+x+5) dx",opts:["ln|2x+1| + C","ln|x²+x+5| + C","2·ln|x²+x+5| + C","1/(x²+x+5) + C","ln|x+5| + C"],ans:1,sol:["A derivada do denominador é exatamente 2x+1.","Faça u = x²+x+5, du = (2x+1)dx.","∫ du/u = ln|u| + C = ln|x²+x+5| + C."]},
+  {t:0,q:"Calcule ∫ sen(x)·cos(x) dx",opts:["sin²(x) + C","sin²(x)/2 + C","cos²(x)/2 + C","−cos²(x)/2 + C","sin(x)cos(x)/2 + C"],ans:1,sol:["Faça u = sin(x), du = cos(x)dx.","∫ u du = u²/2 + C.","Resultado: sin²(x)/2 + C."]},
+  {t:0,q:"Calcule ∫ √(x+1) dx",opts:["(x+1)^(3/2) + C","(1/2)√(x+1) + C","(2/3)(x+1)^(3/2) + C","2√(x+1) + C","(3/2)(x+1)^(1/2) + C"],ans:2,sol:["Faça u = x+1, du = dx.","∫ u^(1/2) du = (2/3)u^(3/2) + C.","Resultado: (2/3)(x+1)^(3/2) + C."]},
+  {t:0,q:"Calcule ∫ e^(2x) dx",opts:["e^(2x) + C","2e^(2x) + C","(1/2)e^(2x) + C","eˣ + C","(1/2)eˣ + C"],ans:2,sol:["Faça u = 2x, du = 2dx → dx = du/2.","∫ eᵘ·(du/2) = (1/2)eᵘ + C.","Resultado: (1/2)e^(2x) + C."]},
+  {t:0,q:"Calcule ∫ x/√(x²+4) dx",opts:["(1/2)√(x²+4) + C","√(x²+4) + C","2√(x²+4) + C","ln(x²+4) + C","x√(x²+4) + C"],ans:1,sol:["Faça u = x²+4, du = 2x dx → x dx = du/2.","∫ (du/2)/√u = √u + C.","Resultado: √(x²+4) + C."]},
+  {t:1,q:"Calcule ∫ x·eˣ dx  [∫u dv = uv − ∫v du]",opts:["x·eˣ + C","eˣ(x+1) + C","eˣ(x−1) + C","x²eˣ/2 + C","eˣ − x + C"],ans:2,sol:["u = x, dv = eˣdx → du = dx, v = eˣ.","= x·eˣ − ∫ eˣdx = x·eˣ − eˣ + C.","Resultado: eˣ(x−1) + C."]},
+  {t:1,q:"Calcule ∫ x·sin(x) dx",opts:["x·cos(x)+sin(x)+C","−x·cos(x)−sin(x)+C","−x·cos(x)+sin(x)+C","x·sin(x)−cos(x)+C","x·cos(x)−sin(x)+C"],ans:2,sol:["u = x, dv = sin(x)dx → du = dx, v = −cos(x).","= −x·cos(x) + ∫ cos(x)dx.","= −x·cos(x) + sin(x) + C."]},
+  {t:1,q:"Calcule ∫ ln(x) dx",opts:["x·ln(x)+C","x·ln(x)−x+C","x/ln(x)+C","ln(x)/x+C","x·ln(x)+x+C"],ans:1,sol:["u = ln(x), dv = dx → du = dx/x, v = x.","= x·ln(x) − ∫ x·(1/x)dx = x·ln(x) − ∫ dx.","= x·ln(x) − x + C."]},
+  {t:1,q:"Calcule ∫ x·cos(x) dx",opts:["x·sin(x)−cos(x)+C","x·cos(x)+sin(x)+C","x·sin(x)+cos(x)+C","sin(x)+cos(x)+C","x²·sin(x)/2+C"],ans:2,sol:["u = x, dv = cos(x)dx → du = dx, v = sin(x).","= x·sin(x) − ∫ sin(x)dx = x·sin(x)+cos(x)+C."]},
+  {t:1,q:"Calcule ∫ x²·eˣ dx  (aplique partes duas vezes)",opts:["eˣ(x²+2x+2)+C","eˣ(x²−2x−2)+C","eˣ(x²−2x+2)+C","x²eˣ−2xeˣ+C","eˣ(x²+2)+C"],ans:2,sol:["1ª aplicação: u=x², dv=eˣdx → x²eˣ − 2∫xeˣdx.","∫xeˣdx = eˣ(x−1).","= x²eˣ − 2eˣ(x−1) = eˣ(x²−2x+2)+C."]},
+  {t:1,q:"Calcule ∫ arctan(x) dx",opts:["x·arctan(x)+C","x·arctan(x)−ln(1+x²)+C","arctan(x)/x+C","x·arctan(x)−(1/2)ln(1+x²)+C","x·arctan(x)+(1/2)ln(1+x²)+C"],ans:3,sol:["u=arctan(x), dv=dx → du=dx/(1+x²), v=x.","= x·arctan(x) − ∫ x/(1+x²)dx.","∫x/(1+x²)dx = (1/2)ln(1+x²). Resultado: x·arctan(x)−(1/2)ln(1+x²)+C."]},
+  {t:1,q:"Calcule ∫ eˣ·cos(x) dx  (partes cíclico)",opts:["eˣ·sin(x)+C","eˣ·cos(x)+C","eˣ(sin(x)−cos(x))/2+C","eˣ(sin(x)+cos(x))/2+C","eˣ·sin(x)·cos(x)+C"],ans:3,sol:["Aplique partes: I = eˣsin(x) − ∫eˣsin(x)dx.","Aplique partes de novo em ∫eˣsin(x)dx = −eˣcos(x)+∫eˣcos(x)dx.","Então 2I = eˣ(sin(x)+cos(x)) → I = eˣ(sin(x)+cos(x))/2+C."]}
+];
+
+let answers=new Array(15).fill(-1),timerSec,totalSec,tInterval;
+let sName='',sSchool='',sCourse='';
+
+function show(id){['screen-register','screen-exam','screen-result','screen-teacher'].forEach(s=>document.getElementById(s).style.display=s===id?'block':'none');}
+
+function startExam(){
+  sName=document.getElementById('sname').value.trim();
+  sSchool=document.getElementById('sschool').value.trim();
+  sCourse=document.getElementById('scourse').value.trim();
+  if(!sName){alert('Informe seu nome completo.');return;}
+  if(!sSchool){alert('Informe sua escola/instituição.');return;}
+  if(!sCourse){alert('Informe seu curso.');return;}
+  show('screen-exam');
+  document.getElementById('sbar').innerHTML=`<b>Aluno:</b> ${sName} &nbsp;|&nbsp; <b>Escola:</b> ${sSchool} &nbsp;|&nbsp; <b>Curso:</b> ${sCourse}`;
+  totalSec=timerSec=EXAM_MINUTES*60;
+  buildNav(); buildQuestions(); updateTimer();
+  tInterval=setInterval(()=>{timerSec--;updateTimer();if(timerSec<=0){clearInterval(tInterval);finishExam(true);}},1000);
+}
+
+function buildNav(){
+  const w=document.getElementById('navdots');w.innerHTML='';
+  QS.forEach((_,i)=>{const d=document.createElement('div');d.className='dot';d.id='dot'+i;d.textContent=i+1;d.onclick=()=>document.getElementById('q'+i)?.scrollIntoView({behavior:'smooth',block:'start'});w.appendChild(d);});
+}
+
+function buildQuestions(){
+  const a=document.getElementById('qarea');a.innerHTML='';let last=-1;
+  QS.forEach((q,qi)=>{
+    if(q.t!==last){const s=document.createElement('p');s.className='sec-lbl';s.textContent=q.t===0?'Parte I — Substituição simples':'Parte II — Integração por partes';a.appendChild(s);last=q.t;}
+    const c=document.createElement('div');c.className='qcard';c.id='q'+qi;
+    let h=`<div class="qnum">Questão ${qi+1} de 15</div><div class="qtext">${q.q}</div>`;
+    q.opts.forEach((o,oi)=>{h+=`<div class="opt" id="o${qi}_${oi}" onclick="pick(${qi},${oi})"><div class="oletter">${'ABCDE'[oi]}</div><div class="otext">${o}</div></div>`;});
+    c.innerHTML=h;a.appendChild(c);
+  });
+}
+
+function pick(qi,oi){
+  const prev=answers[qi];
+  if(prev>=0)document.getElementById(`o${qi}_${prev}`)?.classList.remove('selected');
+  answers[qi]=oi;document.getElementById(`o${qi}_${oi}`)?.classList.add('selected');
+  document.getElementById('dot'+qi)?.classList.add('answered');
+  const done=answers.filter(a=>a>=0).length;
+  document.getElementById('finbtn').textContent=done===15?'Finalizar prova ✓':`Finalizar prova (${done}/15 respondidas)`;
+}
+
+function updateTimer(){
+  const m=Math.floor(timerSec/60),s=timerSec%60;
+  document.getElementById('tdisp').textContent=String(m).padStart(2,'0')+':'+String(s).padStart(2,'0');
+  document.getElementById('pfill').style.width=Math.max(0,(timerSec/totalSec)*100)+'%';
+  const urg=timerSec<=120;
+  document.getElementById('tdisp').classList.toggle('urgent',urg);
+  document.getElementById('pfill').classList.toggle('urgent',urg);
+  document.getElementById('tinfo').textContent=urg?'⚠ Tempo acabando!':'Tempo restante';
+}
+
+function finishExam(timeout=false){
+  clearInterval(tInterval);
+  let correct=0;QS.forEach((q,i)=>{if(answers[i]===q.ans)correct++;});
+  const pct=Math.round((correct/15)*100);
+  try{
+    let arr=JSON.parse(localStorage.getItem('sim_results')||'[]');
+    arr.push({name:sName,school:sSchool,course:sCourse,correct,pct,time:new Date().toLocaleString('pt-BR')});
+    localStorage.setItem('sim_results',JSON.stringify(arr));
+  }catch(e){}
+  show('screen-result');
+  document.getElementById('rscore').textContent=correct+'/15';
+  document.getElementById('rpct').textContent=pct+'% de acertos'+(timeout?' · tempo encerrado':'');
+  const b=document.getElementById('rbadge');
+  if(pct>=90){b.textContent='Excelente — A';b.className='badge ba';}
+  else if(pct>=70){b.textContent='Bom — B';b.className='badge bb';}
+  else if(pct>=50){b.textContent='Regular — C';b.className='badge bc';}
+  else{b.textContent='Insuficiente — D';b.className='badge bd';}
+  document.getElementById('rchips').innerHTML=`<div class="chip">👤 ${sName}</div><div class="chip">🏫 ${sSchool}</div><div class="chip">📚 ${sCourse}</div>`;
+  const sol=document.getElementById('solarea');sol.innerHTML='';
+  QS.forEach((q,i)=>{
+    const ok=answers[i]===q.ans;const c=document.createElement('div');c.className='sol-card';
+    let h=`<div class="sol-head"><div class="sol-icon ${ok?'sok':'serr'}">${ok?'✓':'✗'}</div><div class="sol-q">Q${i+1}: ${q.q}</div></div><div class="sol-body">`;
+    if(!ok&&answers[i]>=0)h+=`<div class="swrong">Sua resposta: ${'ABCDE'[answers[i]]}) ${q.opts[answers[i]]}</div><br>`;
+    h+=`<div class="scorrect">Correta: ${'ABCDE'[q.ans]}) ${q.opts[q.ans]}</div><br>`;
+    q.sol.forEach((s,si)=>{h+=`<b>${si+1}.</b> ${s}<br>`;});
+    h+='</div>';c.innerHTML=h;sol.appendChild(c);
+  });
+}
+
+function openTeacherModal(){document.getElementById('modal').style.display='flex';}
+function closeModal(){document.getElementById('modal').style.display='none';document.getElementById('merr').style.display='none';document.getElementById('tpass').value='';}
+
+function checkPass(){
+  if(document.getElementById('tpass').value===TEACHER_PASSWORD){
+    closeModal();show('screen-teacher');loadResults();
+  }else{document.getElementById('merr').style.display='block';}
+}
+
+function loadResults(){
+  try{
+    const arr=JSON.parse(localStorage.getItem('sim_results')||'[]');
+    const tb=document.getElementById('rtbody');tb.innerHTML='';
+    document.getElementById('nores').style.display=arr.length===0?'block':'none';
+    arr.forEach((r,i)=>{
+      let cLabel='';
+      if(r.pct>=90)cLabel='<span style="color:#155724;font-weight:700">A — Excelente</span>';
+      else if(r.pct>=70)cLabel='<span style="color:#0c5460;font-weight:700">B — Bom</span>';
+      else if(r.pct>=50)cLabel='<span style="color:#856404;font-weight:700">C — Regular</span>';
+      else cLabel='<span style="color:#721c24;font-weight:700">D — Insuficiente</span>';
+      const tr=document.createElement('tr');
+      tr.innerHTML=`<td>${i+1}</td><td>${r.name}</td><td>${r.school||'—'}</td><td>${r.course||'—'}</td><td>${r.correct}/15</td><td>${r.pct}%</td><td>${cLabel}</td><td>${r.time}</td>`;
+      tb.appendChild(tr);
+    });
+  }catch(e){}
+}
+
+function clearAll(){
+  if(confirm('Apagar todos os resultados? Esta ação não pode ser desfeita.')){
+    localStorage.removeItem('sim_results');loadResults();
+  }
+}
+
+function backToRegister(){show('screen-register');}
+</script>
+</body>
+</html>
+"simulado-2.html" class="card-btn fis">Iniciar simulado →</a>
+      </div>
+    </article>
+
+    <!-- ── SIMULADO 3 ── -->
+    <article class="simulado-card" data-subject="matematica">
+      <div class="card-stripe stripe-mat"></div>
+      <div class="card-body">
+        <div class="card-top">
+          <span class="card-subject subj-mat">Matemática</span>
+          <span class="card-num">Simulado #03</span>
+        </div>
+        <h3 class="card-title">Geometria Plana e Espacial</h3>
+        <p class="card-desc">Áreas, perímetros, volumes, Teorema de Pitágoras, círculo e trigonometria básica.</p>
+        <div class="card-meta">
+          <span class="meta-item"><span class="meta-icon">❓</span> 10 questões</span>
+          <span class="meta-item"><span class="meta-icon">⏱</span> 20 minutos</span>
+          <span class="meta-item"><span class="meta-icon">📊</span> Gabarito incluso</span>
+        </div>
+        <a href="simulado-3.html" class="card-btn">Iniciar simulado →</a>
+      </div>
+    </article>
+
+    <!-- ══ ADICIONE NOVOS SIMULADOS AQUI ══
+    <article class="simulado-card" data-subject="fisica">
+      <div class="card-stripe stripe-fis"></div>
+      <div class="card-body">
+        <div class="card-top">
+          <span class="card-subject subj-fis">Física</span>
+          <span class="card-num">Simulado #04</span>
+        </div>
+        <h3 class="card-title">Título do Simulado</h3>
+        <p class="card-desc">Descrição dos tópicos abordados neste simulado.</p>
+        <div class="card-meta">
+          <span class="meta-item"><span class="meta-icon">❓</span> 10 questões</span>
+          <span class="meta-item"><span class="meta-icon">⏱</span> 20 minutos</span>
+          <span class="meta-item"><span class="meta-icon">📊</span> Gabarito incluso</span>
+        </div>
+        <a href="simulado-4.html" class="card-btn fis">Iniciar simulado →</a>
+      </div>
+    </article>
+    -->
+
+  </div>
+
+  <!-- ── NOTA PARA O PROFESSOR ── -->
+  <div class="teacher-note">
+    <h3>📌 Como adicionar um novo simulado</h3>
+    <p>1. Peça ao Claude para criar um arquivo de simulado (ex: <code>simulado-4.html</code>) com as questões que você quiser.</p>
+    <p>2. Copie o bloco de card comentado no código desta página, cole antes do <code>&lt;!-- ADICIONE NOVOS... --&gt;</code>, preencha o título, descrição e o link do arquivo.</p>
+    <p>3. Salve tudo na mesma pasta e arraste novamente para o <strong>netlify.com/drop</strong>. Pronto — o novo simulado aparece na lista!</p>
+    <p style="margin-top:12px; font-size:12px; color: #64748B;">💡 Dica: você pode apagar este aviso antes de publicar. Selecione do &lt;div class="teacher-note"&gt; até o &lt;/div&gt; correspondente e delete.</p>
+  </div>
+
+</main>
+
+<!-- ══ RODAPÉ ══ -->
+<footer>
+  <p>© 2025 Prof. Wanderson Schneider — Matemática &amp; Física · Ensino Médio · Todos os direitos reservados</p>
+</footer>
+
+<script>
+  function filtrar(btn) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const f = btn.dataset.filter;
+    const cards = document.querySelectorAll('.simulado-card');
+    let visible = 0;
+    cards.forEach(card => {
+      const match = f === 'todos' || card.dataset.subject === f;
+      card.setAttribute('data-hidden', match ? 'false' : 'true');
+      if (match) visible++;
+    });
+    document.getElementById('total-simulados').textContent = visible;
+  }
+</script>
+
+</body>
+</html>
